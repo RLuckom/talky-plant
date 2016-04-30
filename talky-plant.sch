@@ -1,0 +1,339 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+EELAYER 25 0
+EELAYER END
+$Descr A 11000 8500
+encoding utf-8
+Sheet 1 1
+Title "talky-plant"
+Date "2016-04-30"
+Rev "2"
+Comp "Raphael Luckom"
+Comment1 "NodeMCU v3 (Lolin) to photoresistor, DHC11, and YL-69 connector"
+Comment2 "TODO: adjust resistor values to account for diode voltage drop"
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L CONN_01X04 DHC11
+U 1 1 572438B6
+P 4900 3100
+F 0 "DHC11" H 4900 3350 50  0000 C CNN
+F 1 "CONN_01X04" V 5000 3100 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x04" H 4900 3100 50  0001 C CNN
+F 3 "" H 4900 3100 50  0000 C CNN
+	1    4900 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR01
+U 1 1 57243929
+P 4700 2950
+F 0 "#PWR01" H 4700 2800 50  0001 C CNN
+F 1 "+3.3V" H 4700 3090 50  0000 C CNN
+F 2 "" H 4700 2950 50  0000 C CNN
+F 3 "" H 4700 2950 50  0000 C CNN
+	1    4700 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR02
+U 1 1 57243943
+P 4700 3250
+F 0 "#PWR02" H 4700 3000 50  0001 C CNN
+F 1 "GND" H 4700 3100 50  0000 C CNN
+F 2 "" H 4700 3250 50  0000 C CNN
+F 3 "" H 4700 3250 50  0000 C CNN
+	1    4700 3250
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4700 3150
+$Comp
+L R DHC11_PUP1
+U 1 1 57243970
+P 3950 2900
+F 0 "DHC11_PUP1" H 3950 2650 50  0000 C CNN
+F 1 "10K" V 3950 2900 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 3880 2900 50  0001 C CNN
+F 3 "" H 3950 2900 50  0000 C CNN
+	1    3950 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR03
+U 1 1 572439DE
+P 3950 2750
+F 0 "#PWR03" H 3950 2600 50  0001 C CNN
+F 1 "+3.3V" H 3950 2890 50  0000 C CNN
+F 2 "" H 3950 2750 50  0000 C CNN
+F 3 "" H 3950 2750 50  0000 C CNN
+	1    3950 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L D_Schottky D2
+U 1 1 57243ACA
+P 4900 3900
+F 0 "D2" H 4900 4000 50  0000 C CNN
+F 1 "IN5817" H 4900 3800 50  0000 C CNN
+F 2 "Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10" H 4900 3900 50  0001 C CNN
+F 3 "" H 4900 3900 50  0000 C CNN
+	1    4900 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L D_Schottky D1
+U 1 1 57243B4D
+P 4250 3900
+F 0 "D1" H 4250 4000 50  0000 C CNN
+F 1 "IN5817" H 4250 3800 50  0000 C CNN
+F 2 "Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10" H 4250 3900 50  0001 C CNN
+F 3 "" H 4250 3900 50  0000 C CNN
+	1    4250 3900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L R PHR_R1
+U 1 1 57243BFE
+P 3850 3600
+F 0 "PHR_R1" V 3950 3600 50  0000 C CNN
+F 1 "200R" V 3850 3600 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 3780 3600 50  0001 C CNN
+F 3 "" H 3850 3600 50  0000 C CNN
+	1    3850 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L R YL-69-R2
+U 1 1 57243CB4
+P 5300 3600
+F 0 "YL-69-R2" V 5400 3600 50  0000 C CNN
+F 1 "5K" V 5300 3600 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 5230 3600 50  0001 C CNN
+F 3 "" H 5300 3600 50  0000 C CNN
+	1    5300 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L R YL-69-R1
+U 1 1 57243D07
+P 5650 3900
+F 0 "YL-69-R1" V 5730 3900 50  0000 C CNN
+F 1 "10K" V 5650 3900 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 5580 3900 50  0001 C CNN
+F 3 "" H 5650 3900 50  0000 C CNN
+	1    5650 3900
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR04
+U 1 1 57243D8A
+P 5300 3450
+F 0 "#PWR04" H 5300 3200 50  0001 C CNN
+F 1 "GND" H 5300 3300 50  0000 C CNN
+F 2 "" H 5300 3450 50  0000 C CNN
+F 3 "" H 5300 3450 50  0000 C CNN
+	1    5300 3450
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	4400 3900 4550 3900
+Wire Wire Line
+	4550 3900 4750 3900
+Connection ~ 4550 3900
+$Comp
+L GND #PWR05
+U 1 1 57243DED
+P 3850 3450
+F 0 "#PWR05" H 3850 3200 50  0001 C CNN
+F 1 "GND" H 3850 3300 50  0000 C CNN
+F 2 "" H 3850 3450 50  0000 C CNN
+F 3 "" H 3850 3450 50  0000 C CNN
+	1    3850 3450
+	1    0    0    1   
+$EndComp
+$Comp
+L CONN_01X02 PHR1
+U 1 1 57243EC0
+P 3200 3850
+F 0 "PHR1" H 3200 4000 50  0000 C CNN
+F 1 "CONN_01X02" V 3300 3850 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02" H 3200 3850 50  0001 C CNN
+F 3 "" H 3200 3850 50  0000 C CNN
+	1    3200 3850
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3400 3900 3850 3900
+Wire Wire Line
+	3850 3900 4100 3900
+$Comp
+L CONN_01X04 YL-69
+U 1 1 5724435F
+P 6250 3750
+F 0 "YL-69" H 6250 4000 50  0000 C CNN
+F 1 "CONN_01X04" V 6350 3750 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x04" H 6250 3750 50  0001 C CNN
+F 3 "" H 6250 3750 50  0000 C CNN
+	1    6250 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR06
+U 1 1 572444FB
+P 6050 3700
+F 0 "#PWR06" H 6050 3450 50  0001 C CNN
+F 1 "GND" H 6050 3550 50  0000 C CNN
+F 2 "" H 6050 3700 50  0000 C CNN
+F 3 "" H 6050 3700 50  0000 C CNN
+	1    6050 3700
+	0    1    1    0   
+$EndComp
+NoConn ~ 6050 3800
+$Comp
+L CONN_01X02 PWR1
+U 1 1 5724A4BB
+P 3450 2900
+F 0 "PWR1" H 3450 3050 50  0000 C CNN
+F 1 "CONN_01X02" V 3550 2900 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02" H 3450 2900 50  0001 C CNN
+F 3 "" H 3450 2900 50  0000 C CNN
+	1    3450 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR07
+U 1 1 5724A575
+P 3250 2850
+F 0 "#PWR07" H 3250 2700 50  0001 C CNN
+F 1 "+3.3V" H 3250 2990 50  0000 C CNN
+F 2 "" H 3250 2850 50  0000 C CNN
+F 3 "" H 3250 2850 50  0000 C CNN
+	1    3250 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR08
+U 1 1 5724A5E1
+P 3250 2950
+F 0 "#PWR08" H 3250 2700 50  0001 C CNN
+F 1 "GND" H 3250 2800 50  0000 C CNN
+F 2 "" H 3250 2950 50  0000 C CNN
+F 3 "" H 3250 2950 50  0000 C CNN
+	1    3250 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X01 MCUD5
+U 1 1 5724A6BC
+P 4350 2850
+F 0 "MCUD5" H 4350 2950 50  0000 C CNN
+F 1 "CONN_01X01" V 4450 2850 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01" H 4350 2850 50  0001 C CNN
+F 3 "" H 4350 2850 50  0000 C CNN
+	1    4350 2850
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3950 3050 4350 3050
+Wire Wire Line
+	4350 3050 4700 3050
+Connection ~ 4350 3050
+$Comp
+L CONN_01X01 MCUA0
+U 1 1 5724A922
+P 4550 4100
+F 0 "MCUA0" V 4700 4100 50  0000 C CNN
+F 1 "CONN_01X01" V 4650 4100 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01" H 4550 4100 50  0001 C CNN
+F 3 "" H 4550 4100 50  0000 C CNN
+	1    4550 4100
+	0    1    1    0   
+$EndComp
+$Comp
+L CONN_01X01 MCUD6
+U 1 1 5724AC23
+P 3600 3800
+F 0 "MCUD6" H 3600 3650 50  0000 C CNN
+F 1 "CONN_01X01" V 3700 3800 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01" H 3600 3800 50  0001 C CNN
+F 3 "" H 3600 3800 50  0000 C CNN
+	1    3600 3800
+	1    0    0    1   
+$EndComp
+$Comp
+L CONN_01X01 MCUD2
+U 1 1 5724AE62
+P 5700 3600
+F 0 "MCUD2" H 5700 3700 50  0000 C CNN
+F 1 "CONN_01X01" V 5800 3600 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01" H 5700 3600 50  0001 C CNN
+F 3 "" H 5700 3600 50  0000 C CNN
+	1    5700 3600
+	-1   0    0    1   
+$EndComp
+$Comp
+L CONN_01X01 TPG1
+U 1 1 5724B55A
+P 3450 3300
+F 0 "TPG1" H 3450 3400 50  0000 C CNN
+F 1 "CONN_01X01" V 3550 3300 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01" H 3450 3300 50  0001 C CNN
+F 3 "" H 3450 3300 50  0000 C CNN
+	1    3450 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR09
+U 1 1 5724B6F5
+P 3250 3300
+F 0 "#PWR09" H 3250 3050 50  0001 C CNN
+F 1 "GND" H 3250 3150 50  0000 C CNN
+F 2 "" H 3250 3300 50  0000 C CNN
+F 3 "" H 3250 3300 50  0000 C CNN
+	1    3250 3300
+	1    0    0    -1  
+$EndComp
+Connection ~ 3850 3900
+Wire Wire Line
+	5900 3600 6050 3600
+Wire Wire Line
+	6050 3900 5800 3900
+Wire Wire Line
+	5050 3900 5300 3900
+Wire Wire Line
+	5300 3900 5500 3900
+Connection ~ 5300 3900
+Wire Wire Line
+	5300 3900 5300 3750
+Wire Wire Line
+	3850 3750 3850 3900
+$EndSCHEMATC
